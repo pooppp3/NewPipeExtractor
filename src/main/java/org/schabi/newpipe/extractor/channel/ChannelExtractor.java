@@ -6,7 +6,6 @@ import org.schabi.newpipe.extractor.UrlIdHandler;
 import org.schabi.newpipe.extractor.exceptions.ExtractionException;
 import org.schabi.newpipe.extractor.exceptions.ParsingException;
 
-import javax.annotation.Nonnull;
 import java.io.IOException;
 
 /*
@@ -35,7 +34,7 @@ public abstract class ChannelExtractor extends ListExtractor {
         super(service, url, nextStreamsUrl);
     }
 
-    @Nonnull
+
     @Override
     protected UrlIdHandler getUrlIdHandler() throws ParsingException {
         return getService().getChannelUrlIdHandler();

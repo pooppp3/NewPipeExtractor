@@ -3,7 +3,6 @@ package org.schabi.newpipe.extractor;
 import org.schabi.newpipe.extractor.exceptions.ExtractionException;
 import org.schabi.newpipe.extractor.stream.StreamInfoItemCollector;
 
-import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.util.List;
 
@@ -40,7 +39,7 @@ public abstract class ListExtractor extends Extractor {
         return nextStreamsUrl == null || nextStreamsUrl.isEmpty();
     }
 
-    @Nonnull
+
     public abstract StreamInfoItemCollector getStreams() throws IOException, ExtractionException;
 
     public abstract NextItemsResult getNextStreams() throws IOException, ExtractionException;

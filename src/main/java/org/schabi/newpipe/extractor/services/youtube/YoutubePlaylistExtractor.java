@@ -19,7 +19,6 @@ import org.schabi.newpipe.extractor.stream.StreamType;
 import org.schabi.newpipe.extractor.utils.Parser;
 import org.schabi.newpipe.extractor.utils.Utils;
 
-import javax.annotation.Nonnull;
 import java.io.IOException;
 
 @SuppressWarnings("WeakerAccess")
@@ -46,7 +45,7 @@ public class YoutubePlaylistExtractor extends PlaylistExtractor {
         nextStreamsAjax = null;
     }
 
-    @Nonnull
+
     @Override
     public String getId() throws ParsingException {
         try {
@@ -56,7 +55,7 @@ public class YoutubePlaylistExtractor extends PlaylistExtractor {
         }
     }
 
-    @Nonnull
+
     @Override
     public String getName() throws ParsingException {
         try {
@@ -143,7 +142,7 @@ public class YoutubePlaylistExtractor extends PlaylistExtractor {
         }
     }
 
-    @Nonnull
+
     @Override
     public StreamInfoItemCollector getStreams() throws IOException, ExtractionException {
         StreamInfoItemCollector collector = new StreamInfoItemCollector(getServiceId());

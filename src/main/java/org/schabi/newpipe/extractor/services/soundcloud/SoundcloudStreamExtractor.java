@@ -9,8 +9,7 @@ import org.schabi.newpipe.extractor.exceptions.ExtractionException;
 import org.schabi.newpipe.extractor.exceptions.ParsingException;
 import org.schabi.newpipe.extractor.stream.*;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -34,37 +33,37 @@ public class SoundcloudStreamExtractor extends StreamExtractor {
         }
     }
 
-    @Nonnull
+
     @Override
     public String getCleanUrl() {
         return track.isString("permalink_url") ? track.getString("permalink_url") : getOriginalUrl();
     }
 
-    @Nonnull
+
     @Override
     public String getId() {
         return track.getInt("id") + "";
     }
 
-    @Nonnull
+
     @Override
     public String getName() {
         return track.getString("title");
     }
 
-    @Nonnull
+
     @Override
     public String getUploadDate() throws ParsingException {
         return SoundcloudParsingHelper.toDateString(track.getString("created_at"));
     }
 
-    @Nonnull
+
     @Override
     public String getThumbnailUrl() {
         return track.getString("artwork_url", "");
     }
 
-    @Nonnull
+
     @Override
     public String getDescription() {
         return track.getString("description");
@@ -100,19 +99,19 @@ public class SoundcloudStreamExtractor extends StreamExtractor {
         return -1;
     }
 
-    @Nonnull
+
     @Override
     public String getUploaderUrl() {
         return track.getObject("user").getString("permalink_url", "");
     }
 
-    @Nonnull
+
     @Override
     public String getUploaderName() {
         return track.getObject("user").getString("username", "");
     }
 
-    @Nonnull
+
     @Override
     public String getUploaderAvatarUrl() {
         return track.getObject("user", new JsonObject()).getString("avatar_url", "");
@@ -168,13 +167,13 @@ public class SoundcloudStreamExtractor extends StreamExtractor {
     }
 
     @Override
-    @Nullable
+
     public List<Subtitles> getSubtitlesDefault() throws IOException, ExtractionException {
         return null;
     }
 
     @Override
-    @Nullable
+
     public List<Subtitles> getSubtitles(SubtitlesFormat format) throws IOException, ExtractionException {
         return null;
     }

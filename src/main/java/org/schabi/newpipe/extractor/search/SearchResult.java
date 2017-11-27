@@ -3,7 +3,6 @@ package org.schabi.newpipe.extractor.search;
 import org.schabi.newpipe.extractor.InfoItem;
 import org.schabi.newpipe.extractor.exceptions.ExtractionException;
 
-import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,9 +31,9 @@ import java.util.List;
 public class SearchResult {
     private final int serviceId;
     public final String suggestion;
-    @Nonnull
+
     public final List<InfoItem> resultList;
-    @Nonnull
+
     public final List<Throwable> errors;
 
     public SearchResult(int serviceId, String suggestion, List<InfoItem> results, List<Throwable> errors) {
@@ -68,12 +67,12 @@ public class SearchResult {
     }
 
 
-    @Nonnull
+
     public List<InfoItem> getResults() {
         return Collections.unmodifiableList(resultList);
     }
 
-    @Nonnull
+
     public List<Throwable> getErrors() {
         return errors;
     }

@@ -11,7 +11,6 @@ import org.schabi.newpipe.extractor.exceptions.ParsingException;
 import org.schabi.newpipe.extractor.kiosk.KioskExtractor;
 import org.schabi.newpipe.extractor.stream.StreamInfoItemCollector;
 
-import javax.annotation.Nonnull;
 
 public class SoundcloudChartsExtractor extends KioskExtractor {
 	private String url;
@@ -26,13 +25,13 @@ public class SoundcloudChartsExtractor extends KioskExtractor {
     public void fetchPage() {
     }
 
-    @Nonnull
+
     @Override
     public String getName() throws ParsingException {
         return "< Implement me (♥_♥) >";
     }
 
-    @Nonnull
+
     @Override
     public UrlIdHandler getUrlIdHandler() {
         return new SoundcloudChartsUrlIdHandler();
@@ -50,7 +49,7 @@ public class SoundcloudChartsExtractor extends KioskExtractor {
         return new NextItemsResult(collector, nextStreamsUrl);
     }
 
-    @Nonnull
+
     @Override
     public StreamInfoItemCollector getStreams() throws IOException, ExtractionException {
         StreamInfoItemCollector collector = new StreamInfoItemCollector(getServiceId());

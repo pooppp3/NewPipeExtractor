@@ -22,8 +22,7 @@ import org.schabi.newpipe.extractor.stream.*;
 import org.schabi.newpipe.extractor.utils.Parser;
 import org.schabi.newpipe.extractor.utils.Utils;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+
 import java.io.IOException;
 import java.util.*;
 import java.util.regex.Matcher;
@@ -77,9 +76,9 @@ public class YoutubeStreamExtractor extends StreamExtractor {
     /*//////////////////////////////////////////////////////////////////////////*/
 
     private Document doc;
-    @Nullable
+
     private JsonObject playerArgs;
-    @Nonnull
+
     private final Map<String, String> videoInfoPage = new HashMap<>();
 
     private boolean isAgeRestricted;
@@ -93,7 +92,7 @@ public class YoutubeStreamExtractor extends StreamExtractor {
     // Impl
     //////////////////////////////////////////////////////////////////////////*/
 
-    @Nonnull
+
     @Override
     public String getId() throws ParsingException {
         try {
@@ -103,7 +102,7 @@ public class YoutubeStreamExtractor extends StreamExtractor {
         }
     }
 
-    @Nonnull
+
     @Override
     public String getName() throws ParsingException {
         String name = getStringFromMetaData("title");
@@ -121,7 +120,7 @@ public class YoutubeStreamExtractor extends StreamExtractor {
         return name;
     }
 
-    @Nonnull
+
     @Override
     public String getUploadDate() throws ParsingException {
         try {
@@ -131,7 +130,7 @@ public class YoutubeStreamExtractor extends StreamExtractor {
         }
     }
 
-    @Nonnull
+
     @Override
     public String getThumbnailUrl() throws ParsingException {
         // Try to get high resolution thumbnail first, if it fails, use low res from the player instead
@@ -154,7 +153,7 @@ public class YoutubeStreamExtractor extends StreamExtractor {
         }
     }
 
-    @Nonnull
+
     @Override
     public String getDescription() throws ParsingException {
         try {
@@ -262,7 +261,7 @@ public class YoutubeStreamExtractor extends StreamExtractor {
         }
     }
 
-    @Nonnull
+
     @Override
     public String getUploaderUrl() throws ParsingException {
         try {
@@ -274,7 +273,7 @@ public class YoutubeStreamExtractor extends StreamExtractor {
     }
 
 
-    @Nullable
+
     private String getStringFromMetaData(String field) {
         String value = null;
         if(playerArgs != null) {
@@ -288,7 +287,7 @@ public class YoutubeStreamExtractor extends StreamExtractor {
         return value;
     }
 
-    @Nonnull
+
     @Override
     public String getUploaderName() throws ParsingException {
         String name = getStringFromMetaData("author");
@@ -307,7 +306,7 @@ public class YoutubeStreamExtractor extends StreamExtractor {
         return name;
     }
 
-    @Nonnull
+
     @Override
     public String getUploaderAvatarUrl() throws ParsingException {
         try {
@@ -403,13 +402,13 @@ public class YoutubeStreamExtractor extends StreamExtractor {
     }
 
     @Override
-    @Nullable
+
     public List<Subtitles> getSubtitlesDefault() throws IOException, ExtractionException {
         return getSubtitles(SubtitlesFormat.TTML);
     }
 
     @Override
-    @Nullable
+
     public List<Subtitles> getSubtitles(SubtitlesFormat format) throws IOException, ExtractionException {
         if(isAgeRestricted) {
             // If the video is age restricted getPlayerConfig will fail

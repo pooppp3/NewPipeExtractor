@@ -28,8 +28,7 @@ import org.schabi.newpipe.extractor.exceptions.ExtractionException;
 import org.schabi.newpipe.extractor.exceptions.ParsingException;
 import org.schabi.newpipe.extractor.utils.Parser;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -44,17 +43,17 @@ public abstract class StreamExtractor extends Extractor {
         super(service, url);
     }
 
-    @Nonnull
+
     @Override
     protected UrlIdHandler getUrlIdHandler() throws ParsingException {
         return getService().getStreamUrlIdHandler();
     }
 
-    @Nonnull
+
     public abstract String getUploadDate() throws ParsingException;
-    @Nonnull
+
     public abstract String getThumbnailUrl() throws ParsingException;
-    @Nonnull
+
     public abstract String getDescription() throws ParsingException;
 
     /**
@@ -115,11 +114,11 @@ public abstract class StreamExtractor extends Extractor {
     public abstract long getLikeCount() throws ParsingException;
     public abstract long getDislikeCount() throws ParsingException;
 
-    @Nonnull
+
     public abstract String getUploaderUrl() throws ParsingException;
-    @Nonnull
+
     public abstract String getUploaderName() throws ParsingException;
-    @Nonnull
+
     public abstract String getUploaderAvatarUrl() throws ParsingException;
 
     /**
@@ -132,10 +131,10 @@ public abstract class StreamExtractor extends Extractor {
     public abstract List<VideoStream> getVideoStreams() throws IOException, ExtractionException;
     public abstract List<VideoStream> getVideoOnlyStreams() throws IOException, ExtractionException;
 
-    @Nullable
+
     public abstract List<Subtitles> getSubtitlesDefault() throws IOException, ExtractionException;
 
-    @Nullable
+
     public abstract List<Subtitles> getSubtitles(SubtitlesFormat format) throws IOException, ExtractionException;
 
     public abstract StreamType getStreamType() throws ParsingException;

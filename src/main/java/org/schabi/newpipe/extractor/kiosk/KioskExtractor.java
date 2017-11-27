@@ -25,7 +25,6 @@ import org.schabi.newpipe.extractor.StreamingService;
 import org.schabi.newpipe.extractor.exceptions.ExtractionException;
 import org.schabi.newpipe.extractor.exceptions.ParsingException;
 
-import javax.annotation.Nonnull;
 import java.io.IOException;
 
 public abstract class KioskExtractor extends ListExtractor {
@@ -52,7 +51,7 @@ public abstract class KioskExtractor extends ListExtractor {
     }
 
 
-    @Nonnull
+
     @Override
     public String getId() throws ParsingException {
         return id;
@@ -66,7 +65,7 @@ public abstract class KioskExtractor extends ListExtractor {
      * @return the tranlsated version of id
      * @throws ParsingException
      */
-    @Nonnull
+
     @Override
     public abstract String getName() throws ParsingException;
 
